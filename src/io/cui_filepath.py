@@ -2,9 +2,9 @@ from pathlib import Path
 
 def input_file_path() -> Path:
     while True:
-        file_path = Path(input("CSVファイルのパスを入力してください："))
+        file_path = Path(input("CSVファイルのパスを入力してください: ").strip().strip('"'))
 
-        if file_path.is_file():
+        if not file_path.is_file():
             print("ファイルが見つかりませんでした。")
             continue
 
